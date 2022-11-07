@@ -1,7 +1,8 @@
 import React from "react";
+import { App } from "./app";
+import ReactDom from "react-dom"
 
-export class HelloWorld extends React.Component {
-    render(){
-       return <h1>"Hello, World!"</h1>
-    }
-}
+const appComponent = <App />
+const rootSel = document.querySelector("#root");
+
+ReactDOM.render(appComponent, rootSel);
