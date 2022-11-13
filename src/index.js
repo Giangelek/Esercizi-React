@@ -1,8 +1,6 @@
-import React from "react";
-import { App } from "./app";
-import ReactDom from "react-dom"
+import ReactDOM from "react-dom"
+import { App } from "./app"
 
-const appComponent = <App />
-const rootSel = document.querySelector("#root");
+const root = document.querySelector("#root");
 
-ReactDOM.render(appComponent, rootSel);
+ReactDOM.render(<App />, root);
