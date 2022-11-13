@@ -1,7 +1,7 @@
 import React from "react";
-import { HelloWorld } from "./hello";
-import { Message } from "./message";
-import { Welcome } from "./welcome";
+import { HelloWorld } from "./Hello";
+import { Message } from "./Message";
+import { Welcome } from "./Welcome";
 
 const strongName= <strong>Enzuccio Zappaterra</strong>
 
