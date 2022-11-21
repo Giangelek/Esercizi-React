@@ -6,21 +6,23 @@ import { Message } from "./Message";
 import { Welcome } from "./Welcome";
 import {ClickTracker} from "./Clicktracker"
 import { InteractiveWelcome } from "./InteractiveWelcome";
+import { LoginComponent } from "./LoginComponent";
 
 
 export class App extends React.Component{
     render(){
         return(
             <div>
-                <HelloWorld />
+                {/* <HelloWorld />
                 <Welcome name="John" age={12} />
-                <Counter start={32} increment={2} time={800}/>
+                <Counter start={32} increment={2} time={800}/> */}
                 <br></br>
                 <ClickCounter />
                 <br></br>
                 <ClickTracker />
                 <br></br>
                 <InteractiveWelcome />
+                <LoginComponent />
 
                 
             </div>
