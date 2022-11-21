@@ -5,6 +5,7 @@ import { HelloWorld } from "./Hello";
 import { Message } from "./Message";
 import { Welcome } from "./Welcome";
 import {ClickTracker} from "./Clicktracker"
+import { InteractiveWelcome } from "./InteractiveWelcome";
 
 
 export class App extends React.Component{
@@ -18,6 +19,9 @@ export class App extends React.Component{
                 <ClickCounter />
                 <br></br>
                 <ClickTracker />
+                <br></br>
+                <InteractiveWelcome />
+
                 
             </div>
         )
