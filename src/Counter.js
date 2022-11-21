@@ -6,12 +6,14 @@ export class Counter extends React.Component{
         count : this.props.start,
     }
 
-    constructor(props){
-        super(props)
+    componentDidMount(){
         setInterval(() =>{
             this.setState({count: this.state.count + this.props.increment})
         },this.props.time )
     }
+
+    //immagino che il costruttore non serva poichè componentDidMount esegue l'operazione dopo che il suo component di riferimento viene
+    //renderizzato
 
     render(){
         return(
