@@ -4,6 +4,8 @@ import { Counter } from "./Counter";
 import { HelloWorld } from "./Hello";
 import { Message } from "./Message";
 import { Welcome } from "./Welcome";
+import {ClickTracker} from "./Clicktracker"
+
 
 export class App extends React.Component{
     render(){
@@ -14,6 +16,9 @@ export class App extends React.Component{
                 <Counter start={32} increment={2} time={800}/>
                 <br></br>
                 <ClickCounter />
+                <br></br>
+                <ClickTracker />
+                
             </div>
         )
 
