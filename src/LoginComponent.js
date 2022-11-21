@@ -1,10 +1,11 @@
 import React from "react"
 
-export class Login extends React.Component {
+export class LoginComponent extends React.Component {
     state={
         username:"",
         password:"",
         remember:"",
+        disabled:true,
     }
 
     handleInputChange= (event) =>{
@@ -12,8 +13,26 @@ export class Login extends React.Component {
         const name = event.target.name    
         const type = event.target.type
         const checked = event.target.checked
+        const disabled= event.target.disabled
   
-        this.setState({ [name]:  type === 'checkbox' ? checked : value, })
+        this.setState({ [name]: type === 'checkbox' ? checked : value, })
+        this.setState({ [name]: type === "button" ? disabled : value, disabled: value !== "" ? false : true });
+
+        // così non può funzionare?
+        //this.setState({ [name]: type === "button" ? disabled : value, disabled: (this.state.username !== "" || this.state.password !== "") 
+        // ? false : true });
+    }
+
+    onLogin= (event) =>{
+        const username= this.state.username
+        const password= this.state.password
+        const remember= this.state.remember
+
+        console.log({
+            username,
+            password,
+            remember
+        })
     }
 
     render() { 
@@ -21,10 +40,15 @@ export class Login extends React.Component {
             
             <div>
                 <p>Prego inserisca i suoi codici d'accesso:</p>
+                <label>Grado</label>
                 <input name="username" value={this.state.username} onChange={this.handleInputChange} />
-                <input name="password" type="password" value={this.state.password} onChange={this.handleInputChange} />
-                <input name="remember" type="checkbox" checked={this.state.remember} onChange={this.handleInputChange} />
+                <br/>
+                <label>Codice</label><input name="password" type="password" value={this.state.password} onChange={this.handleInputChange} />
+                <br/>
+                <label>Ricorda</label><input name="remember" type="checkbox" checked={this.state.remember} onChange={this.handleInputChange} />
+                <button name="login" type="button" disabled={this.state.disabled} onChange={this.handleInputChange} onClick={this.onLogin}>Login</button>
             </div>
         )
     }
 }   
+
