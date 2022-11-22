@@ -44,7 +44,7 @@ export class UncontrolledLogin extends React.Component {
             <p>Prego inserisca i suoi codici d'accesso:</p>
             <form onSubmit={this.handleFormLogin} onReset={this.handleFormReset} onChange={this.handleChange}>
                 <label>Username</label>
-                <input name="username" />
+                <input name="username" autoFocus />
                 <br/>
                 <label>Password</label>
                 <input name="password" type="password" />
