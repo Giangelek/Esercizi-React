@@ -25,13 +25,13 @@ export class UncontrolledLogin extends React.Component {
 
     handleFormReset= (event) =>{
         event.target.reset();
-
+        this.setState({disabled:true})
     };
 
     handleChange= (event) =>{
         console.log(this.state.formValue)
-        this.setState({setValue:{[event.target.name]: event.target.value}})
-        if(this.state.formValue.username !== "" && this.state.formValue.password !==""){
+        this.setState({formValue:{[event.target.name]: event.target.value}})
+        if(this.state.formValue.username !== "" && this.state.formValue.password !== undefined){
             this.setState({disabled : false})
         } else {
             this.setState({disabled : true})
@@ -47,7 +47,7 @@ export class UncontrolledLogin extends React.Component {
                 <input name="username" autoFocus />
                 <br/>
                 <label>Password</label>
-                <input name="password" type="password" />
+                <input name="password" type="password"/>
                 <br/>
                 <label>Ricorda</label>
                 <input name="remember" type="checkbox"/>
