@@ -7,6 +7,7 @@ import { Welcome } from "./Welcome";
 import {ClickTracker} from "./Clicktracker"
 import { InteractiveWelcome } from "./InteractiveWelcome";
 import { LoginComponent } from "./LoginComponent";
+import { UncontrolledLogin } from "./UncontrolledLogin";
 
 
 export class App extends React.Component{
@@ -16,13 +17,16 @@ export class App extends React.Component{
                 {/* <HelloWorld />
                 <Welcome name="John" age={12} />
                 <Counter start={32} increment={2} time={800}/> */}
-                <br></br>
+                {/* <br></br>
                 <ClickCounter />
                 <br></br>
                 <ClickTracker />
                 <br></br>
                 <InteractiveWelcome />
-                <LoginComponent />
+                <p>---Controlled Components form---</p>
+                <LoginComponent /> */}
+                <p>---Uncontrolled Components form---</p>
+                <UncontrolledLogin/>
 
                 
             </div>
