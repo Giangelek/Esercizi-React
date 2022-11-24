@@ -15,9 +15,9 @@ export class App extends React.Component{
     render(){
         return(
             <div>
-                {/* <HelloWorld />
-                <Welcome name="John" age={12} />
-                <Counter start={32} increment={2} time={800}/> */}
+                {/* <HelloWorld /> */}
+                <Welcome name="John" age={36} />
+                {/* <Counter start={32} increment={2} time={800}/> */}
                 {/* <br></br>
                 <ClickCounter />
                 <br></br>
@@ -26,9 +26,9 @@ export class App extends React.Component{
                 <InteractiveWelcome />
                 <p>---Controlled Components form---</p>
                 <LoginComponent /> */}
-                <p>---Uncontrolled Components form---</p>
+                {/* <p>---Uncontrolled Components form---</p>
                 <UncontrolledLogin/>
-                <TodoList />
+                <TodoList /> */}
 
 
                            
