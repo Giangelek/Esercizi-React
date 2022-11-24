@@ -25,7 +25,7 @@ export class UncontrolledLogin extends React.Component {
 
     handleFormReset= (event) =>{
         event.target.reset();
-        this.setState({disabled:true})
+        this.setState({disabled:true, formValue:{username:"",password:""}})
     };
 
     handleChange= (event) =>{
