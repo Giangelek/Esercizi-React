@@ -7,21 +7,24 @@ export class TodoList extends React.Component {
       "Sconfiggi la principessa",
       "Salva e sposa il drago",
     ],
+    input:"",
   }
 
   handleInputAdd = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     this.setState({
-        items:[...this.state.items, this.state.input]
-    })
+      items: [...this.state.items, this.state.input],
+      input: "",
+    });
   };
+
 
   handleInputSave = (event) => {
     event.preventDefault();
-    this.setState({ input: event.target.value });
+    this.setState({
+      input: event.target.value,
+    });
   };
-
-  
 
   render() {
     return (
@@ -32,9 +35,8 @@ export class TodoList extends React.Component {
             <li key={index + 1}>{item}</li>
           ))}
           <br/>
-          
         </ul>
-        <input onChange={this.handleInputSave}></input>
+        <input value={this.state.input} onChange={this.handleInputSave}></input>
         <button onClick={this.state.input !== "" ? this.handleInputAdd : false}>Add to list</button>
       </div>
     );
