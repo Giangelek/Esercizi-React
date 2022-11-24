@@ -26,6 +26,13 @@ export class TodoList extends React.Component {
     });
   };
 
+  handleReset = (event) => {
+    event.preventDefault();
+    this.setState({
+      items: []
+    })
+  }
+
   render() {
     return (
       <div>
@@ -38,6 +45,7 @@ export class TodoList extends React.Component {
         </ul>
         <input value={this.state.input} onChange={this.handleInputSave}></input>
         <button onClick={this.state.input !== "" ? this.handleInputAdd : false}>Add to list</button>
+        <button onClick={this.handleReset}>Reset</button>
       </div>
     );
   }
