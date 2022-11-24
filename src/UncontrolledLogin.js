@@ -52,7 +52,7 @@ export class UncontrolledLogin extends React.Component {
                 <label>Ricorda</label>
                 <input name="remember" type="checkbox"/>
                 <br/>
-                <button type="submit" disabled={this.state.disabled} >Login</button>
+                <button type="submit" disabled={this.state.disabled}>Login</button>
                 <button type="reset" disabled={this.state.disabled}>Reset</button>
             </form>
         </div>)

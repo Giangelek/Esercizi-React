@@ -16,7 +16,7 @@ export class App extends React.Component{
         return(
             <div>
                 {/* <HelloWorld /> */}
-                <Welcome name="John" age={36} />
+                {/* <Welcome name="John" age={36} /> */}
                 {/* <Counter start={32} increment={2} time={800}/> */}
                 {/* <br></br>
                 <ClickCounter />
@@ -24,11 +24,11 @@ export class App extends React.Component{
                 <ClickTracker />
                 <br></br>
                 <InteractiveWelcome />
-                <p>---Controlled Components form---</p>
-                <LoginComponent /> */}
+                <p>---Controlled Components form---</p> */}
+                <LoginComponent />
                 {/* <p>---Uncontrolled Components form---</p>
-                <UncontrolledLogin/>
-                <TodoList /> */}
+                <UncontrolledLogin/> */}
+                {/* <TodoList /> */}
 
 
                            
