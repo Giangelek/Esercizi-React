@@ -4,7 +4,7 @@ export class LoginComponent extends React.Component {
     state={
         username:"",
         password:"",
-        remember:"",
+        remember:false,
         disabled:true,
     }
 
@@ -16,11 +16,12 @@ export class LoginComponent extends React.Component {
         const disabled= event.target.disabled
   
         this.setState({ [name]: type === 'checkbox' ? checked : value, })
-        this.setState({ [name]: type === "button" ? disabled : value, disabled: value !== "" ? false : true });
+        this.setState({ [name]: type === "button" ? disabled : value, disabled: this.state.username !== "" && this.state.password !== "" ? false : true })
 
-        // così non può funzionare?
-        //this.setState({ [name]: type === "button" ? disabled : value, disabled: (this.state.username !== "" || this.state.password !== "") 
-        // ? false : true });
+        
+        
+
+
     }
 
     onLogin= (event) =>{
@@ -35,6 +36,18 @@ export class LoginComponent extends React.Component {
         })
     }
 
+    
+
+    onReset= (event) => {
+        this.setState({
+            username: "",
+            password: "",
+            remember: false,
+            disabled: true
+        })
+    }
+
+
     render() { 
         return (
             
@@ -47,6 +60,7 @@ export class LoginComponent extends React.Component {
                 <br/>
                 <label>Ricorda</label><input name="remember" type="checkbox" checked={this.state.remember} onChange={this.handleInputChange} />
                 <button name="login" type="button" disabled={this.state.disabled} onChange={this.handleInputChange} onClick={this.onLogin}>Login</button>
+                <button name="Reset" type="button"disabled={this.state.disabled} onChange={this.handleInputChange} onClick={this.onReset}>Reset</button>
             </div>
         )
     }
