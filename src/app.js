@@ -9,6 +9,7 @@ import { InteractiveWelcome } from "./InteractiveWelcome";
 import { LoginComponent } from "./LoginComponent";
 import { UncontrolledLogin } from "./UncontrolledLogin";
 import { TodoList } from "./TodoList";
+import { Container } from "./Container";
 
 
 export class App extends React.Component{
@@ -25,10 +26,11 @@ export class App extends React.Component{
                 <br></br>
                 <InteractiveWelcome />
                 <p>---Controlled Components form---</p> */}
-                <LoginComponent />
+                {/* <LoginComponent /> */}
                 {/* <p>---Uncontrolled Components form---</p>
                 <UncontrolledLogin/> */}
                 {/* <TodoList /> */}
+                <Container />
 
 
                            

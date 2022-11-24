@@ -8,3 +8,10 @@
     color: rgb(43, 166, 203);
 }
 
+.container{
+    background-color: white;
+    border: solid 15px red;
+    border-radius: 15px;
+    height: 100px;
+    width: auto;
+}
