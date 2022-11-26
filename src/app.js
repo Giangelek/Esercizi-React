@@ -33,7 +33,7 @@ export class App extends React.Component {
           <option value={"en"}>Britannian</option>
           <option value={"it"}>Italico</option>
         </select>
-        <LanguageContext.Provider value="this.state.language">
+        <LanguageContext.Provider value={this.state.language}>
           <DisplayLanguage />
           <TodoList>
             {(items, handleRemove) => (
