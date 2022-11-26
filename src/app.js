@@ -30,25 +30,11 @@ export class App extends React.Component {
           value={this.state.language}
           onChange={this.handleLanguageChange}
         >
-          <option value={"en"}>Britannian</option>
-          <option value={"it"}>Italico</option>
+          <option value={"en"}>Saxọ̄̆nlī - english</option>
+          <option value={"it"}>Volgare - italiano</option>
         </select>
-        <LanguageContext.Provider value="this.state.language">
+        <LanguageContext.Provider value={this.state.language}>
           <DisplayLanguage />
-          <TodoList>
-            {(items, handleRemove) => (
-              <div>
-                <ul>
-                  {items.map((item, index) => (
-                    <li key={index + 1}>
-                      {item}{" "}
-                      <button onClick={() => handleRemove()}>Remove</button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </TodoList>
         </LanguageContext.Provider>
       </Container>
     );
