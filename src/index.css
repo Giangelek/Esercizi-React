@@ -10,9 +10,8 @@
 
 .container{
     background-color: white;
-    border: solid 15px red;
+    border: solid 15px rgb(94, 32, 32);
     border-radius: 15px;
     padding: 20px;
-    height: 100%;
-    width: 100%;
 }
+

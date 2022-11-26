@@ -3,10 +3,10 @@ import { LanguageContext } from "./LanguageContext";
 
 const Strings = {
   en: {
-    CURRENT_LANGUAGE: "Ich speak Saxọ̄̆nlī, a'd thee musÞ diæ",
+    current_text: "Ich speak Saxọ̄̆nlī, a'd thee musÞ diæ",
   },
   it: {
-    CURRENT_LANGUAGE: "La mea favella è l'italico",
+    current_text: "La mea favella è l'italico, e lei messere debe perire",
   },
 };
 
@@ -20,8 +20,8 @@ export class DisplayLanguage extends React.Component {
       <div>
         <LanguageContext.Consumer>
           {(Language) => {
-            return;
-            <p>{Strings[Language].CURRENT_LANGUAGE}</p>;
+            return(
+            <p>{Strings[Language].current_text}</p>)
           }}
         </LanguageContext.Consumer>
       </div>

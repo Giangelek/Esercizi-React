@@ -26,15 +26,20 @@ export class App extends React.Component {
     return (
       <Container>
         <p>Oh prode cavaliere, quale lingua voi parlate?</p>
-        <select
-          value={this.state.language}
-          onChange={this.handleLanguageChange}
-        >
-          <option value={"en"}>Saxọ̄̆nlī - english</option>
-          <option value={"it"}>Volgare - italiano</option>
-        </select>
+        <div>
+          <select
+            value={this.state.language}
+            onChange={this.handleLanguageChange}
+            
+          >
+            <option value={"en"}>Saxọ̄̆nlī - english</option>
+            <option value={"it"}>Volgare - italiano</option>
+          </select>
+        </div>
         <LanguageContext.Provider value={this.state.language}>
+
           <DisplayLanguage />
+
         </LanguageContext.Provider>
       </Container>
     );
