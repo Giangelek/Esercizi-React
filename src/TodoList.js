@@ -43,7 +43,7 @@ export class TodoList extends React.Component {
     return (
       <div>
         <p>Buoni propositi del Gran Cavaliere</p>
-        {this.props.render(this.state.items, this.handleInputAdd)}
+        {this.props.children(this.state.items, this.handleInputAdd)}
         <br/>
         <input value={this.state.input} onChange={this.handleInputSave}></input>
         <button onClick={this.state.input !== "" ? this.handleInputAdd : false}>Add to list</button>

@@ -10,41 +10,47 @@ import { LoginComponent } from "./LoginComponent";
 import { UncontrolledLogin } from "./UncontrolledLogin";
 import { TodoList } from "./TodoList";
 import { Container } from "./Container";
+import { LanguageContext } from "./LanguageContext";
+import { DisplayLanguage } from "./DisplayLanguage";
 
 export class App extends React.Component {
+    state= {
+        language: "en",
+    }
+
+    handleLanguageChange = (event) =>{
+        this.setState({language: event.target.value})
+    }
+
   render() {
     return (
-      <div>
-        {/* <HelloWorld /> */}
-        {/* <Welcome name="John" age={36} /> */}
-        {/* <Counter start={32} increment={2} time={800}/> */}
-        {/* <br></br>
-                <ClickCounter />
-                <br></br>
-                <ClickTracker />
-                <br></br>
-                <InteractiveWelcome />
-                <p>---Controlled Components form---</p> */}
-        {/* <LoginComponent /> */}
-        {/* <p>---Uncontrolled Components form---</p>
-                <UncontrolledLogin/> */}
-        <Container>
-            <TodoList
-            render={(items, handleRemove) => (
-                <div>
+      <Container>
+        <p>Oh prode cavaliere, quale lingua voi parlate?</p>
+        <select
+          value={this.state.language}
+          onChange={this.handleLanguageChange}
+        >
+          <option value={"en"}>Britannian</option>
+          <option value={"it"}>Italico</option>
+        </select>
+        <LanguageContext.Provider value="this.state.language">
+          <DisplayLanguage />
+          <TodoList>
+            {(items, handleRemove) => (
+              <div>
                 <ul>
-                    {items.map((item, index) => (
+                  {items.map((item, index) => (
                     <li key={index + 1}>
-                        {item}{" "}
-                        <button onClick={() => handleRemove()}>Remove</button>
+                      {item}{" "}
+                      <button onClick={() => handleRemove()}>Remove</button>
                     </li>
-                    ))}
+                  ))}
                 </ul>
-                </div>
+              </div>
             )}
-            ></TodoList>
-        </Container>
-      </div>
+          </TodoList>
+        </LanguageContext.Provider>
+      </Container>
     );
   }
 }
