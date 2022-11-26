@@ -35,20 +35,7 @@ export class App extends React.Component {
         </select>
         <LanguageContext.Provider value={this.state.language}>
           <DisplayLanguage />
-          <TodoList>
-            {(items, handleRemove) => (
-              <div>
-                <ul>
-                  {items.map((item, index) => (
-                    <li key={index + 1}>
-                      {item}{" "}
-                      <button onClick={() => handleRemove()}>Remove</button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </TodoList>
+         
         </LanguageContext.Provider>
       </Container>
     );
