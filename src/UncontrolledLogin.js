@@ -30,8 +30,11 @@ export class UncontrolledLogin extends React.Component {
 
     handleChange= (event) =>{
         console.log(this.state.formValue)
-        this.setState({formValue:{[event.target.name]: event.target.value}})
-        if(this.state.formValue.username !== "" && this.state.formValue.password !== undefined){
+        this.setState({
+          formValue: { ...this.state.formValue, [event.target.name]: event.target.value,
+        },
+        });
+        if(this.state.formValue.username !== "" && this.state.formValue.password !== ""){
             this.setState({disabled : false})
         } else {
             this.setState({disabled : true})
