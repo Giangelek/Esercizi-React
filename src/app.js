@@ -12,6 +12,7 @@ import { TodoList } from "./TodoList";
 import { Container } from "./Container";
 import { LanguageContext } from "./LanguageContext";
 import { DisplayLanguage } from "./DisplayLanguage";
+import { Sum } from "./Sum";
 
 export class App extends React.Component {
     state= {
@@ -25,23 +26,7 @@ export class App extends React.Component {
   render() {
     return (
       <Container>
-        <Welcome name={"Von Holtz"} age={ 12}/>
-        <p>Oh prode cavaliere, quale lingua voi parlate?</p>
-        <div>
-          <select
-            value={this.state.language}
-            onChange={this.handleLanguageChange}
-          >
-            <option value={"en"}>Saxọ̄̆nlī - english</option>
-            <option value={"it"}>Volgare - italiano</option>
-          </select>
-        </div>
-        <LanguageContext.Provider value={this.state.language}>
-
-          <DisplayLanguage />
-
-        </LanguageContext.Provider>
-        <UncontrolledLogin />
+        <Sum numbers={[32,44,55,922]} object={"fumetti"}/>
       </Container>
     );
   }
