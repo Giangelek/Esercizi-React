@@ -30,8 +30,11 @@ export class UncontrolledLogin extends React.Component {
 
     handleChange= (event) =>{
         console.log(this.state.formValue)
-        this.setState({formValue:{[event.target.name]: event.target.value}})
-        if(this.state.formValue.username !== "" && this.state.formValue.password !== undefined){
+        this.setState({
+          formValue: { ...this.state.formValue, [event.target.name]: event.target.value,
+        },
+        });
+        if(this.state.formValue.username !== "" && this.state.formValue.password !== ""){
             this.setState({disabled : false})
         } else {
             this.setState({disabled : true})
@@ -44,7 +47,7 @@ export class UncontrolledLogin extends React.Component {
             <p>Prego inserisca i suoi codici d'accesso:</p>
             <form onSubmit={this.handleFormLogin} onReset={this.handleFormReset} onChange={this.handleChange}>
                 <label>Username</label>
-                <input name="username" autoFocus />
+                <input name="username" autoFocus/>
                 <br/>
                 <label>Password</label>
                 <input name="password" type="password"/>

@@ -54,7 +54,7 @@ export class LoginComponent extends React.Component {
             <div>
                 <p>Prego inserisca i suoi codici d'accesso:</p>
                 <label>Grado</label>
-                <input name="username" value={this.state.username} onChange={this.handleInputChange} />
+                <input name="username" value={this.state.username} onChange={this.handleInputChange} on />
                 <br/>
                 <label>Codice</label><input name="password" type="password" value={this.state.password} onChange={this.handleInputChange} />
                 <br/>

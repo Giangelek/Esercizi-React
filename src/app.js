@@ -41,6 +41,7 @@ export class App extends React.Component {
           <DisplayLanguage />
 
         </LanguageContext.Provider>
+        <UncontrolledLogin />
       </Container>
     );
   }
