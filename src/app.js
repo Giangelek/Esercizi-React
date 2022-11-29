@@ -18,7 +18,7 @@ export class App extends React.Component {
   render() {
     return (
       <Container>
-        <LoginComponent />
+        <ClickCounter initialValue={0} />
       </Container>
     );
   }
