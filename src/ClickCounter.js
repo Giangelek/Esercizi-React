@@ -4,7 +4,7 @@ import{useState} from "react";
 export function ClickCounter({initialValue}){
     const [count, setCounter] = useState(initialValue)
 
-    useEffect(() => onCounterChange, [count])
+    useEffect(() => onCounterChange, [count, onCounterChange])
 
     function onCounterChange(){
         console.log(count)
