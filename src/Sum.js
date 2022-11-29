@@ -1,4 +1,4 @@
-export function Sum({numbers = [1], object = [computer]}){
+export function Sum({numbers = [1], object = ["computer"]}){
     let totale = 0
     numbers.forEach(number => {
         totale += number

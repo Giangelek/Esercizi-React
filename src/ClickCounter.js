@@ -1,24 +1,24 @@
 import React from "react";
+import{useState} from "react";
 
-export class ClickCounter extends React.Component{
-    state = {
-        count: 0,
+export function ClickCounter({initialValue}){
+    const [count, setCounter] = useState(initialValue)
+
+
+    function counterIncrement(){
+        setCounter(count + 1)
     }
 
-    counterIncrement(){
-        this.setState({count: this.state.count + 1})
-    }
-
-    render(){
-        return(
+    return(
             <div>
                 <h1>Aiuta il Capitano Picard a distruggere le navi Romulane:</h1>
-                <button onClick={this.counterIncrement.bind(this)}>     
+                <button onClick={counterIncrement}>     
                     Ordina di armare e sparare con i phasers
                 </button>
-                <h3>Navi distrutte: {this.state.count}</h3>
+                <h3>Navi distrutte: {count}</h3>
 
             </div>
-        )
-    }
+    )
+        
+    
 }

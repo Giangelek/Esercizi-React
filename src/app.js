@@ -15,18 +15,10 @@ import { DisplayLanguage } from "./DisplayLanguage";
 import { Sum } from "./Sum";
 
 export class App extends React.Component {
-    state= {
-        language: "en",
-    }
-
-    handleLanguageChange = (event) =>{
-        this.setState({language: event.target.value})
-    }
-
   render() {
     return (
       <Container>
-        <Sum numbers={[32,44,55,922]} object={"fumetti"}/>
+        <ClickCounter initialValue={0}/>
       </Container>
     );
   }
