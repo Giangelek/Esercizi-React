@@ -1,68 +1,54 @@
-import React from "react"
+import React, { useState } from "react"
 
-export class LoginComponent extends React.Component {
-    state={
+
+export function LoginComponent(){
+    const [loginData, setLoginData] = useState({
         username:"",
         password:"",
         remember:false,
-        disabled:true,
+    })
+    
+
+    function handleInputChange(event) {
+        const { value, name, disabled, checked, type } = event.target;
+    
+        setLoginData({
+            ...loginData,
+          [name]: type === "checkbox" ? checked : value,
+          [name]: type === "button" ? disabled : value,
+        });
     }
 
-    handleInputChange= (event) =>{
-        const value = event.target.value
-        const name = event.target.name    
-        const type = event.target.type
-        const checked = event.target.checked
-        const disabled= event.target.disabled
-  
-        this.setState({ [name]: type === 'checkbox' ? checked : value, })
-        this.setState({ [name]: type === "button" ? disabled : value, disabled: value !== "" ? false : true })
-        
-
-        // così non può funzionare?
-        //this.setState({ [name]: type === "button" ? disabled : value, disabled: (this.state.username !== "" || this.state.password !== "") 
-        // ? false : true });
-    }
-
-    onLogin= (event) =>{
-        const username= this.state.username
-        const password= this.state.password
-        const remember= this.state.remember
-
-        console.log({
-            username,
-            password,
-            remember
-        })
+    function onLogin(event){
+        console.log(loginData)
     }
 
     
 
-    onReset= (event) => {
-        this.setState({
+    function onReset(event){
+        setLoginData({
             username: "",
             password: "",
             remember: false,
-            loginDisabled: true
+            
         })
     }
 
 
-    render() { 
-        return (
-            
+     
+    return (
             <div>
                 <p>Prego inserisca i suoi codici d'accesso:</p>
                 <label>Grado</label>
-                <input name="username" value={this.state.username} onChange={this.handleInputChange} on />
+                <input name="username" value={loginData.username} defaultValue={loginData.username} onChange={handleInputChange} on />
                 <br/>
-                <label>Codice</label><input name="password" type="password" value={this.state.password} onChange={this.handleInputChange} />
+                <label>Codice</label><input name="password" type="password" value={loginData.password} defaultValue={loginData.password} onChange={handleInputChange} />
                 <br/>
-                <label>Ricorda</label><input name="remember" type="checkbox" checked={this.state.remember} onChange={this.handleInputChange} />
-                <button name="login" type="button" style={{backgroundColor: this.state.password.length < 8 ? "red" : " green"}} disabled={this.state.disabled} onChange={this.handleInputChange} onClick={this.onLogin}>Login</button>
-                <button name="Reset" type="button"disabled={this.state.disabled} onChange={this.handleInputChange} onClick={this.onReset}>Reset</button>
+                <label>Ricorda</label><input name="remember" type="checkbox" checked={loginData.remember} onChange={handleInputChange} />
+                <button name="login" type="button" onChange={handleInputChange} onClick={onLogin}>Login</button>
+                <button name="Reset" type="button" onChange={handleInputChange} onClick={onReset}>Reset</button>
             </div>
-        )
-    }
+    )    
+    
 }   
 
