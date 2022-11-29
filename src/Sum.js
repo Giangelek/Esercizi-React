@@ -1,4 +1,4 @@
-export function Sum({numbers, object}){
+export function Sum({numbers = [1], object = [computer]}){
     let totale = 0
     numbers.forEach(number => {
         totale += number
@@ -11,3 +11,5 @@ export function Sum({numbers, object}){
     )
 
 }
+
+//utilizzo dei valori di default per il componente
