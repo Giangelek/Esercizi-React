@@ -1,23 +1,29 @@
-import React from "react";
-import { CounterDisplay } from "./CounterDisplay";
+import { useEffect, useState } from 'react'
 
-export class Counter extends React.Component{
-    state ={
-        count : this.props.start,
+export function Counter ({initialValue = 0  }){
+  
+  const [counter, setCounter]  = useState(initialValue); 
+  
+  useEffect(() => {
+    console.log('Il contatore è stato caricato')
+    
+    return() => {
+      console.log('il contatore è stato eliminato')
     }
+  },[])
 
-    componentDidMount(){
-        setInterval(() =>{
-            this.setState({count: this.state.count + this.props.increment})
-        },this.props.time )
-    }
+  useEffect(() => {
+    console.log(`attualmente il numero è ${counter}` )
+  }, [counter] )
 
-    //immagino che il costruttore non serva poichè componentDidMount esegue l'operazione dopo che il suo component di riferimento viene
-    //renderizzato
+  function handleCounterIncrement() {
+      setCounter((c) => c + 1 ) 
+  }
 
-    render(){
-        return(
-            <CounterDisplay count={this.state.count} />
-        )
-    }
+  return (
+      <div>
+        <h2>Serviamo il numero: {counter}</h2>
+        <button onClick={handleCounterIncrement}>Increment</button>
+      </div>
+    );
 }
