@@ -21,7 +21,7 @@ export class App extends React.Component {
   render() {
     return (
       <Container>
-        <HookForm />
+        <GithubUser username="giangelek" />
       </Container>
     );
   }
