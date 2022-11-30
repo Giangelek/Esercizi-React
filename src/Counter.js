@@ -2,12 +2,12 @@ import { useCounter } from './useCounter';
 
 export function Counter ({initialValue = 0  }){
   
-  const { counter, handleCounterIncrement} = useCounter(initialValue)
+  const { counter, onIncrement} = useCounter(initialValue)
 
   return (
       <div>
         <h2>Serviamo il numero: {counter}</h2>
-        <button onClick={handleCounterIncrement}>Increment</button>
+        <button onClick={onIncrement}>Increment</button>
       </div>
     );
 }
