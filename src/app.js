@@ -13,12 +13,13 @@ import { Container } from "./Container";
 import { LanguageContext } from "./LanguageContext";
 import { DisplayLanguage } from "./DisplayLanguage";
 import { Sum } from "./Sum";
+import { GithubUser } from "./GithubUser";
 
 export class App extends React.Component {
   render() {
     return (
       <Container>
-        <Counter />
+        <GithubUser username="giangelek" />
       </Container>
     );
   }
