@@ -1,21 +1,15 @@
-import { useEffect, useState } from "react"
+import { useGithubUser } from "./useGithubUser";
 
 export function GithubUser({ username }) {
-    const [userData, setData] = useState("")
-
-  useEffect(() => {
-    fetch(`https://api.github.com/users/${username}`)
-      .then((response) => {
-        return response.json()
-      })
-      .then((json) => {
-        console.log(json)
-
-        setData(json)
-      })
-  }, [username])
+  const { data, loading, error } = useGithubUser(username);
 
   return (
-    <div className="user">{userData && <h1>Name:{userData.name}</h1>}</div>
+    <div className="HookForm">
+      {error && <h1>Non è stato possibile trovare l'utente...</h1>}
+      {loading && <h1>Ricerca utente...</h1>}
+      {data && <h1>Il nome dell'utente è {data.name}</h1>}
+    </div>
   );
 }
+
+export default GithubUser;
