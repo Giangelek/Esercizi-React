@@ -4,8 +4,9 @@ import { Age } from "./Age";
 
 export function Welcome({ name, age }){
     const navigate = useNavigate()
-    function handleDatabaseButtonClick(){
-        navigate("users/giangelek")
+    function handleDatabaseButtonClick(event){
+        const {value} = event.target
+        navigate(value)
     }
     return(
         <div className="welcome">
@@ -13,7 +14,7 @@ export function Welcome({ name, age }){
             <Age age={age}/>
             <div className="linkBar">
                 <Link to="/counter">Vai al contatore clienti</Link>
-                <button onClick={handleDatabaseButtonClick}>Vai al database ricercati</button>
+                <button onClick={handleDatabaseButtonClick} value="users/giangelek">Vai al database ricercati</button>
 
             </div>
         </div>
