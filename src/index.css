@@ -40,3 +40,10 @@ select{
     padding: 5px;
 }
 
+.linkBar{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
