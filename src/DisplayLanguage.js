@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useContext} from "react";
 import { LanguageContext } from "./LanguageContext";
 
 const Strings = {
@@ -10,21 +10,12 @@ const Strings = {
   },
 };
 
-export class DisplayLanguage extends React.Component {
-  state = {
-    CURRENT_LANGUAGE: "en",
-  };
+export function DisplayLanguage() {
+  const Language = useContext(LanguageContext);
 
-  render() {
-    return (
-      <div>
-        <LanguageContext.Consumer>
-          {(Language) => {
-            return(
-            <p>{Strings[Language].current_text}</p>)
-          }}
-        </LanguageContext.Consumer>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <p>{Strings[Language].current_text}</p>
+    </div>
+  );
 }
