@@ -1,24 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useCounter } from './useCounter';
 
 export function Counter ({initialValue = 0  }){
   
-  const [counter, setCounter]  = useState(initialValue); 
-  
-  useEffect(() => {
-    console.log('Il contatore è stato caricato')
-    
-    return() => {
-      console.log('il contatore è stato eliminato')
-    }
-  },[])
-
-  useEffect(() => {
-    console.log(`attualmente il numero è ${counter}` )
-  }, [counter] )
-
-  function handleCounterIncrement() {
-      setCounter((c) => c + 1 ) 
-  }
+  const { counter, handleCounterIncrement} = useCounter(initialValue)
 
   return (
       <div>

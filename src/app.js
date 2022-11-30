@@ -20,7 +20,7 @@ export class App extends React.Component {
   render() {
     return (
       <Container>
-        <GithubList/>
+        <Counter/>
       </Container>
     );
   }
