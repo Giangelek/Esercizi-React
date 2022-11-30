@@ -1,58 +1,46 @@
 import { useEffect, useState, useRef } from "react";
 
 
-export function CarDetails(){
+export function CarDetails() {
     const [initialData, setInitialData] = useState({
-        model:"DeLorean DMC-12",
+        model: "DeLorean DMC-12",
         year: "1981",
         color: "acciaio",
     })
-    const [model, setModel] = useState()
-    const [year, setYear] = useState()
-    const [color, setColor] = useState()
+    const [carData, setCarData ] = useState({model:"", year:"", color:""})
     const inputRef = useRef()
 
- 
+    useEffect(() => {
+        inputRef.current.focus()
+    }, [])
+    
+    function handleInputChange(event) {
+        const { value, name } = event.target;
 
- useEffect(() => {
-    inputRef.current.focus()
- }, [])
+        setCarData({
+            ...carData,
+            [name]: value
 
-  function handleInputModel(event){
-    setModel(event.target.value)
-    setInitialData({model:"",
-    year: "",
-    color: "",})
-  }
+        });
+        setInitialData({
+            model: "",
+            year: "",
+            color: "",
+        })
+    }
 
-  function handleInputYear(event){
-    setYear(event.target.value)
-    setInitialData({model:"",
-    year: "",
-    color: "",})
-  }
-
-  function handleInputColor(event){
-    setColor(event.target.value)
-    setInitialData({model:"",
-    year: "",
-    color: "",})
-  }
-
-  
-
-    return(
+    return (
         <div className="divCarDet">
-            <h1>Archivio auto cinema</h1>
-            <h4>Modello: {model}</h4>
-            <input ref={inputRef} value={model} placeholder={initialData.model} onChange={handleInputModel} />
-            <h4>Colore: {color}</h4>
-            <input ref={inputRef} value={color} placeholder={initialData.color} onChange={handleInputColor} />
-            <h4>Anno di immatricolazione: {year}</h4>
-            <input ref={inputRef} value={year} placeholder={initialData.year} onChange={handleInputYear} />
-            
+            <h1>Valuta la tua auto</h1>
+            <h4>Modello: {carData.model}</h4>
+            <input name="model" ref={inputRef} value={carData.model} placeholder={initialData.model} onChange={handleInputChange} />
+            <h4>Colore: {carData.color}</h4>
+            <input name="color" ref={inputRef} value={carData.color} placeholder={initialData.color} onChange={handleInputChange} />
+            <h4>Anno di immatricolazione: {carData.year}</h4>
+            <input name="year" ref={inputRef} value={carData.year} placeholder={initialData.year} onChange={handleInputChange} />
 
-            { model && color && year && <h1>La {model} {color} del {year} è l'auto più cool di sempre ! </h1>}
+
+            {carData.model && carData.color && carData.year && <h1>La tua {carData.model} {carData.color} del {carData.year} è un catorcio ! </h1>}
 
         </div>
     )
