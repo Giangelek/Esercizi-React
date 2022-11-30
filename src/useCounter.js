@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 import { useState, useCallback } from "react"
 
 export function useCounter(initialValue = 0) {
