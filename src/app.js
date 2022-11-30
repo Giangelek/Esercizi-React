@@ -14,15 +14,16 @@ export function App() {
   
   return (
     <div>
-      <Container>
-      <div className="linkBar">
-          <button onClick={handleDatabaseButtonClick} value="/welcome">Vai alla pagina profilo</button>
-          <button onClick={handleDatabaseButtonClick} value="/counter">Vai al contatore clienti</button>
-          <button onClick={handleDatabaseButtonClick} value="users/giangelek">Vai al database ricercati</button>
+      <Container title="My app">
+        
+        <div className="linkBar">
+            <button onClick={handleDatabaseButtonClick} value="/welcome">Vai alla pagina profilo</button>
+            <button onClick={handleDatabaseButtonClick} value="/counter">Vai al contatore clienti</button>
+            <button onClick={handleDatabaseButtonClick} value="users/giangelek">Vai al database ricercati</button>
 
-      </div>
+        </div>
         <Routes>
-          <Route path="/welcome" element={<Welcome name="Peppino" age={75} />} />
+          <Route path="/welcome" element={<Welcome name="Guest" />} />
           <Route path="counter" element={<Counter initialValue={0}/>} />
           <Route path="users/:username" element={<ShowGithubUser  />} />
         </Routes>
