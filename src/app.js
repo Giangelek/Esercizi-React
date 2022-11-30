@@ -15,12 +15,13 @@ import { DisplayLanguage } from "./DisplayLanguage";
 import { Sum } from "./Sum";
 import { GithubUser } from "./GithubUser";
 import GithubList from "./GithubList";
+import {HookForm} from "./HookForm"
 
 export class App extends React.Component {
   render() {
     return (
       <Container>
-        <Counter/>
+        <HookForm />
       </Container>
     );
   }
