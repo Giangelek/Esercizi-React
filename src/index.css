@@ -10,7 +10,7 @@
 
 .container{
     background-color: #171616;
-    border: solid 15px hwb(60 0% 7%);
+    border: solid 15px green;
     border-radius: 15px;
     padding: 20px;
 }
@@ -27,6 +27,10 @@
 }
 
 .divCarDet{
+    color: white;
+}
+
+.divList{
     color: white;
 }
 
