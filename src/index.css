@@ -9,8 +9,8 @@
 }
 
 .container{
-    background-color: rgb(0, 0, 0);
-    border: solid 15px rgb(26, 139, 26);
+    background-color: #171616;
+    border: solid 15px hwb(60 0% 7%);
     border-radius: 15px;
     padding: 20px;
 }
@@ -24,5 +24,9 @@
 
 .pUser{
     font-size: 10px;
+}
+
+.divCarDet{
+    color: white;
 }
 
