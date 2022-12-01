@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, Routes, Route } from "react-router-dom";
+
 import { GithubUser } from "./GithubUser";
 
 export function GithubList() {
@@ -38,6 +39,7 @@ export function GithubList() {
       }}
     >
       <div>
+      
         <input value={data.inputField} onChange={handleInputSave}></input>
         <button
           disabled={data.inputField === "" ? true : false}
@@ -46,6 +48,7 @@ export function GithubList() {
           Search
         </button>
       </div>
+      
       <ul>
         {data.usernames.map((username, index) => (
           <li key={index}>
@@ -53,6 +56,9 @@ export function GithubList() {
           </li>
         ))}
       </ul>
+      <Routes>
+        <Route index element={<p>Inserisci il nome del ricercato e selezionalo dalla lista</p>}/>
+      </Routes>
       <Outlet />
     </div>
   );
