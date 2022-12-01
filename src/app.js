@@ -28,6 +28,7 @@ export function App() {
           <Route path="/counter" element={<Counter initialValue={0}/>} />
           <Route path="/users" element={<GithubList  />}>
             <Route path=":username" element={<GithubUser/>}/> 
+            
           </Route>
           <Route path="*" element={<NotFound/>}/>
         </Routes>

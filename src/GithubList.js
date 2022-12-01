@@ -29,7 +29,14 @@ export function GithubList() {
   };
 
   return (
-    <div style={{ display:"flex", flexDirection:"column", justifyContent:"center", padding:20}}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        padding: 20,
+      }}
+    >
       <div>
         <input value={data.inputField} onChange={handleInputSave}></input>
         <button
@@ -41,7 +48,7 @@ export function GithubList() {
       </div>
       <ul>
         {data.usernames.map((username, index) => (
-          <li key={index} >
+          <li key={index}>
             <Link to={`/users/${username}`}>{username}</Link>
           </li>
         ))}
