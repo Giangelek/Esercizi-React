@@ -5,6 +5,8 @@ import { Container } from "./Container";
 import {Counter } from "./Counter"
 import { ShowGithubUser } from "./ShowGithubUser";
 import { NotFound } from "./notFound";
+import {GithubList} from "./GithubList";
+import {GithubUser} from "./GithubUser";
 
 export function App() {
   const navigate = useNavigate();
@@ -19,12 +21,14 @@ export function App() {
       <div className="linkBar">
             <button onClick={handleDatabaseButtonClick} value="/welcome">Vai alla pagina profilo</button>
             <button onClick={handleDatabaseButtonClick} value="/counter">Vai al contatore clienti</button>
-            <button onClick={handleDatabaseButtonClick} value="users/giangelek">Vai al database ricercati</button>
+            <button onClick={handleDatabaseButtonClick} value="/users">Vai al database ricercati</button>
       </div>
         <Routes>
           <Route path="/welcome" element={<Welcome name="Guest" />} />
-          <Route path="counter" element={<Counter initialValue={0}/>} />
-          <Route path="users/:username" element={<ShowGithubUser  />} />
+          <Route path="/counter" element={<Counter initialValue={0}/>} />
+          <Route path="/users" element={<GithubList  />}>
+            <Route path=":username" element={<GithubUser/>}/> 
+          </Route>
           <Route path="*" element={<NotFound/>}/>
         </Routes>
         

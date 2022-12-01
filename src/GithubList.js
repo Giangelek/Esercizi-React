@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { Link, Outlet } from "react-router-dom";
 import { GithubUser } from "./GithubUser";
 
-export default function GithubList() {
+export function GithubList() {
   const [data, setData] = useState({
     inputField: "",
     usernames: [],
@@ -28,21 +29,24 @@ export default function GithubList() {
   };
 
   return (
-    <div>
-      <input value={data.inputField} onChange={handleInputSave}></input>
-      <button
-        disabled={data.inputField === "" ? true : false}
-        onClick={handleInputAdd}
-      >
-        Search
-      </button>
+    <div style={{ display:"flex", flexDirection:"column", justifyContent:"center", padding:20}}>
+      <div>
+        <input value={data.inputField} onChange={handleInputSave}></input>
+        <button
+          disabled={data.inputField === "" ? true : false}
+          onClick={handleInputAdd}
+        >
+          Search
+        </button>
+      </div>
       <ul>
         {data.usernames.map((username, index) => (
-          <li key={index} style={{ fontSize: 10 }}>
-            <GithubUser username={username} />
+          <li key={index} >
+            <Link to={`/users/${username}`}>{username}</Link>
           </li>
         ))}
       </ul>
+      <Outlet />
     </div>
   );
 }
