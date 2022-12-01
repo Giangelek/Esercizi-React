@@ -76,5 +76,14 @@ select{
     background-color: rgb(148, 74, 21) ;
 }
 
+.notFoundContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
+.notFoundTextCont{
+    margin: 30px;
+    padding: 20px;
+}
 
